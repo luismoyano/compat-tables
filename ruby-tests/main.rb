@@ -1,12 +1,18 @@
-require ENV["library"] || "shiny_json_logic"
-require "json"
-
 ENGINES = {
-  "shiny_json_logic" => "ShinyJsonLogic",
-  "json_logic_ruby" => "JsonLogic::Evaluator",
-  "json-logic-rb" => "JsonLogic",
-  "json_logic" => "JsonLogic"
+  "shiny_json_logic" => { "class" => "ShinyJsonLogic", "requirement" => "shiny_json_logic" },
+  "json_logic_ruby" => { "class" => "JsonLogic::Evaluator", "requirement" => "json_logic" },
+  "json-logic-rb" => { "class" => "JsonLogic", "requirement" => "json_logic" },
+  "json_logic" => { "class" => "JSONLogic", "requirement" => "json_logic" },
 }
+
+begin
+  require ENGINES.dig(ENV["LIBRARY"], "requirement")
+rescue StandardError => e
+  puts "Could not load library #{ENV["LIBRARY"]}. Make sure it's installed."
+  puts e.message
+  exit 1
+end
+require "json"
 
 def load_test_suite
   test_files = JSON.parse(File.read("../suites/index.json"))
@@ -22,18 +28,21 @@ def run_engine_tests(engine:, suite:)
   passed = 0
   total = 0
 
-  suite.each_with_object(total) do |case_data, index|
+  suite.each do |case_data|
     next unless case_data.is_a?(Hash)
 
-    index += 1
+    total += 1
 
-    puts "Running test #{index}: #{case_data["description"]}"
+    puts "Running test #{total}: #{case_data["description"]}"
     result = engine.apply(case_data["rule"], case_data["data"])
     if result == case_data["result"]
       passed += 1
     else
-      puts "Test #{index} failed. Expected #{case_data["result"]}, got #{result}"
+      puts "Test #{total} failed. Expected #{case_data["result"]}, got #{result}"
     end
+  rescue StandardError => e
+    puts "Test #{total} failed. Expected #{case_data["result"]}, error #{e.message} was raised"
+    next
   end
 
   [passed, total]
@@ -42,7 +51,7 @@ end
 def run_suite_tests(summary:, suite_name:, suite:)
   puts "\nRunning suite: #{suite_name}"
 
-  engine_name = ENV["LIBRARY"] || "shiny_json_logic"
+  engine_name = ENV["LIBRARY"]
   engine = solve_engine(engine_name)
 
   passed, total = run_engine_tests(engine: engine, suite: suite)
@@ -50,7 +59,7 @@ def run_suite_tests(summary:, suite_name:, suite:)
 end
 
 def solve_engine(engine_name)
-  engine_class = Object.const_get(ENGINES[engine_name])
+  engine_class = Object.const_get(ENGINES.dig(engine_name, "class"))
   case engine_name
   when "shiny_json_logic", "json-logic-rb", "json_logic"
     engine_class
@@ -62,13 +71,13 @@ def solve_engine(engine_name)
 end
 
 def load_existing_summary(filename:)
-  JSON.parse(File.read(filename))
+  JSON.parse(File.read(filename)).tap do |summary|
+    summary["totals"][ENV["LIBRARY"]] = {"passed" => 0, "total" => 0}
+  end
 rescue Errno::ENOENT, JSON::ParserError
   {
     "test_suites" => {},
-    "totals" => {},
-    "timestamp" => [],
-    "python_version" => []
+    "totals" => { ENV["LIBRARY"] => {"passed" => 0, "total" => 0} },
   }
 end
 
@@ -79,7 +88,6 @@ def add_result(summary, suite_name, engine, passed, total)
     "total" => total,
   }
 
-  summary["totals"][engine] ||= {"passed" => 0, "total" => 0}
   summary["totals"][engine]["passed"] += passed
   summary["totals"][engine]["total"] += total
 end
@@ -92,10 +100,14 @@ def main
   summary = load_existing_summary(filename: results_file)
 
   suites.each do |suite|
-    run_suite_tests(summary: summary, suite_name: suite["suite_name"], suite: suite["cases"])
+    run_suite_tests(summary: summary, suite_name: suite["test_suite"], suite: suite["cases"])
   end
-
-  File.write("../results/ruby.json", JSON.pretty_generate(summary))
+rescue StandardError => e
+  puts "An error occurred: #{e.message}"
+  puts e.full_message
+ensure
+  File.write(results_file, JSON.pretty_generate(summary))
+  p "Tests with #{ENV["LIBRARY"]} have finished. Results saved to #{results_file}"
 end
 
 if __FILE__ == $0
