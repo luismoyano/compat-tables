@@ -1,4 +1,4 @@
-require ENV["library"] || "shiny_json_logic_ruby"
+require ENV["library"] || "shiny_json_logic"
 require "json"
 
 ENGINES = {
@@ -12,8 +12,8 @@ def load_test_suite
   test_files = JSON.parse(File.read("../suites/index.json"))
   test_files.map do |file_name|
     {
-      test_suite: file_name,
-      cases: JSON.parse(File.read("../suites/#{file_name}")).with_indifferent_access
+      "test_suite" => file_name,
+      "cases" => JSON.parse(File.read("../suites/#{file_name}"))
     }
   end
 end
@@ -27,12 +27,12 @@ def run_engine_tests(engine:, suite:)
 
     index += 1
 
-    puts "Running test #{index}: #{case_data[:description]}"
-    result = engine.apply(case_data[:rule], case_data[:data])
-    if result == case_data[:result]
+    puts "Running test #{index}: #{case_data["description"]}"
+    result = engine.apply(case_data["rule"], case_data["data"])
+    if result == case_data["result"]
       passed += 1
     else
-      puts "Test #{index} failed. Expected #{case_data[:result]}, got #{result}"
+      puts "Test #{index} failed. Expected #{case_data["result"]}, got #{result}"
     end
   end
 
@@ -42,7 +42,7 @@ end
 def run_suite_tests(summary:, suite_name:, suite:)
   puts "\nRunning suite: #{suite_name}"
 
-  engine_name = ENV["LIBRARY"] || "shiny_json_logic_ruby"
+  engine_name = ENV["LIBRARY"] || "shiny_json_logic"
   engine = solve_engine(engine_name)
 
   passed, total = run_engine_tests(engine: engine, suite: suite)
@@ -52,9 +52,7 @@ end
 def solve_engine(engine_name)
   engine_class = Object.const_get(ENGINES[engine_name])
   case engine_name
-  when "shiny_json_logic"
-  when "json-logic-rb"
-  when "json_logic"
+  when "shiny_json_logic", "json-logic-rb", "json_logic"
     engine_class
   when "json_logic_ruby"
     engine_class.new
@@ -94,7 +92,7 @@ def main
   summary = load_existing_summary(filename: results_file)
 
   suites.each do |suite|
-    run_suite_tests(summary: summary, suite_name: suite[:suite_name], suite: suite[:cases])
+    run_suite_tests(summary: summary, suite_name: suite["suite_name"], suite: suite["cases"])
   end
 
   File.write("../results/ruby.json", JSON.pretty_generate(summary))
