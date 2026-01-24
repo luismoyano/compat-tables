@@ -6,3 +6,6 @@ venv/
 
 # Claude Code
 .claude/
+
+# asdf
+.tool-versions
