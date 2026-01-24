@@ -2,15 +2,18 @@ require ENV["library"] || "shiny_json_logic_ruby"
 require "json"
 
 ENGINES = {
-  **({ "shiny_json_logic_ruby" => ShinyJsonLogic } if defined?(ShinyJsonLogic)),
-  **({ "json_logic_ruby" => JsonLogic } if defined?(JsonLogic)),
-  **({ "json_logic_rb" => JsonLogicRB } if defined?(JsonLogicRB)),
+  "shiny_json_logic_ruby" => "ShinyJsonLogic",
+  "json_logic_ruby" => "JsonLogic",
+  "json_logic_rb" => "JsonLogicRB"
 }
 
 def load_test_suite
   test_files = JSON.parse(File.read("../suites/index.json"))
   test_files.map do |file_name|
-    JSON.parse(File.read("../suites/#{file_name}")).with_indifferent_access
+    {
+      test_suite: file_name,
+      cases: JSON.parse(File.read("../suites/#{file_name}")).with_indifferent_access
+    }
   end
 end
 
@@ -38,10 +41,11 @@ end
 def run_suite_tests(summary:, suite_name:, suite:)
   puts "\nRunning suite: #{suite_name}"
 
-  engine = ENGINES.fetch(ENV["LIBRARY"], "shiny_json_logic_ruby")
+  engine_name = ENV["LIBRARY"] || "shiny_json_logic_ruby"
+  engine = ENGINES[engine_name].constantize
 
-  passed, total = run_engine_tests(engine:, suite:)
-  summary.add_result(suite_name, engine, passed, total)
+  passed, total = run_engine_tests(engine: engine, suite: suite)
+  add_result(summary, suite_name, engine_name, passed, total)
 end
 
 def load_existing_summary(filename:)
@@ -55,21 +59,30 @@ rescue Errno::ENOENT, JSON::ParserError
   }
 end
 
+def add_result(summary, suite_name, engine, passed, total)
+  summary["test_suites"][suite_name] ||= {}
+  summary["test_suites"][suite_name][engine] = {
+    "passed" => passed,
+    "total" => total,
+  }
+
+  summary["totals"][engine] ||= {"passed" => 0, "total" => 0}
+  summary["totals"][engine]["passed"] += passed
+  summary["totals"][engine]["total"] += total
+end
+
 def main
   suites = load_test_suite
   puts "Successfully loaded #{suites.size} test suites"
 
-  summary = "" # TODO
-
   results_file = "../results/ruby.json"
-  existing_results = load_existing_summary(filename: results_file)
-  # summary.load_existing_results(existing_results)
+  summary = load_existing_summary(filename: results_file)
 
-  suites.each_with_index do |suite, idx|
-    suite_name = "suite_#{idx + 1}"
-    run_suite_tests(summary: summary, suite_name: suite_name, suite: suite)
-    # Save Summary
+  suites.each do |suite|
+    run_suite_tests(summary: summary, suite_name: suite[:suite_name], suite: suite[:cases])
   end
+
+  File.write("../results/ruby.json", JSON.pretty_generate(summary))
 end
 
 if __FILE__ == $0
