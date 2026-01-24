@@ -2,9 +2,10 @@ require ENV["library"] || "shiny_json_logic_ruby"
 require "json"
 
 ENGINES = {
-  "shiny_json_logic_ruby" => "ShinyJsonLogic",
-  "json_logic_ruby" => "JsonLogic",
-  "json_logic_rb" => "JsonLogicRB"
+  "shiny_json_logic" => "ShinyJsonLogic",
+  "json_logic_ruby" => "JsonLogic::Evaluator",
+  "json-logic-rb" => "JsonLogic",
+  "json_logic" => "JsonLogic"
 }
 
 def load_test_suite
