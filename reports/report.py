@@ -55,6 +55,7 @@ def create_summary_table(results: Dict[str, Any]) -> Dict[str, Any]:
         'javascript': '<i class="devicon-javascript-plain"></i>',
         'java': '<i class="devicon-java-plain"></i>',
         'csharp': '<i class="devicon-csharp-plain"></i>',
+        'ruby': '<i class="devicon-ruby-plain"></i>',
     }
     
     # Create ordered list of all engines
