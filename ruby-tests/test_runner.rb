@@ -43,10 +43,24 @@ def run_suite_tests(summary:, suite_name:, suite:)
   puts "\nRunning suite: #{suite_name}"
 
   engine_name = ENV["LIBRARY"] || "shiny_json_logic_ruby"
-  engine = ENGINES[engine_name].constantize
+  engine = solve_engine(engine_name)
 
   passed, total = run_engine_tests(engine: engine, suite: suite)
   add_result(summary, suite_name, engine_name, passed, total)
+end
+
+def solve_engine(engine_name)
+  engine_class = Object.const_get(ENGINES[engine_name])
+  case engine_name
+  when "shiny_json_logic"
+  when "json-logic-rb"
+  when "json_logic"
+    engine_class
+  when "json_logic_ruby"
+    engine_class.new
+  else
+    raise "Unknown engine: #{engine_name}"
+  end
 end
 
 def load_existing_summary(filename:)
