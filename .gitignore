@@ -2,6 +2,7 @@ debug/
 target/
 .DS_Store
 venv/
+.idea/
 
 # Claude Code
 .claude/
