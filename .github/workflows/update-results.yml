@@ -63,34 +63,42 @@ jobs:
       - name: Run JavaScript tests
         working-directory: js-tests
         run: sh run.sh
+        continue-on-error: true
 
       - name: Run Rust tests
         working-directory: rust-tests
         run: sh run.sh
+        continue-on-error: true
 
       - name: Run Go tests
         working-directory: go-tests
         run: sh run.sh
+        continue-on-error: true
 
       - name: Run Python tests
         working-directory: python-tests
         run: sh run.sh
+        continue-on-error: true
 
       - name: Run PHP tests
         working-directory: php-tests
         run: sh run.sh
+        continue-on-error: true
 
       - name: Run Java tests
         working-directory: java-tests
         run: sh run.sh
+        continue-on-error: true
 
       - name: Run .NET tests
         working-directory: dotnet-tests
         run: sh run.sh
+        continue-on-error: true
 
       - name: Run Ruby tests
         working-directory: ruby-tests
         run: sh run.sh
+        continue-on-error: true
 
       - name: Install report dependencies
         run: pip install jinja2
