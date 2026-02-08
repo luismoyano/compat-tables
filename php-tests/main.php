@@ -1,8 +1,8 @@
 <?php
 require_once __DIR__ . '/vendor/autoload.php';
-require_once __DIR__ . '/engines/TestRunner.php';
-require_once __DIR__ . '/test/TestCase.php';
-require_once __DIR__ . '/reporting/TestSummary.php';
+require_once __DIR__ . '/Engines/TestRunner.php';
+require_once __DIR__ . '/Test/TestCase.php';
+require_once __DIR__ . '/Reporting/TestSummary.php';
 
 use JsonLogic\JsonLogic;
 use JsonLogicCompat\Test\TestCase;
