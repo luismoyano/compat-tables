@@ -1,0 +1,676 @@
+{
+  "test_suites": {
+    "compatible.json": {
+      "shiny_json_logic": {
+        "passed": 278,
+        "total": 278
+      },
+      "json-logic-rb": {
+        "passed": 278,
+        "total": 278
+      },
+      "json_logic": {
+        "passed": 273,
+        "total": 278
+      }
+    },
+    "arithmetic/plus.json": {
+      "json-logic-rb": {
+        "passed": 19,
+        "total": 32
+      },
+      "json_logic": {
+        "passed": 18,
+        "total": 32
+      },
+      "shiny_json_logic": {
+        "passed": 17,
+        "total": 32
+      }
+    },
+    "arithmetic/plus.extra.json": {
+      "json-logic-rb": {
+        "passed": 0,
+        "total": 3
+      },
+      "json_logic": {
+        "passed": 0,
+        "total": 3
+      },
+      "shiny_json_logic": {
+        "passed": 0,
+        "total": 3
+      }
+    },
+    "arithmetic/multiply.json": {
+      "json-logic-rb": {
+        "passed": 19,
+        "total": 28
+      },
+      "json_logic": {
+        "passed": 19,
+        "total": 28
+      },
+      "shiny_json_logic": {
+        "passed": 18,
+        "total": 28
+      }
+    },
+    "arithmetic/multiply.extra.json": {
+      "json-logic-rb": {
+        "passed": 0,
+        "total": 3
+      },
+      "json_logic": {
+        "passed": 0,
+        "total": 3
+      },
+      "shiny_json_logic": {
+        "passed": 0,
+        "total": 3
+      }
+    },
+    "arithmetic/minus.json": {
+      "json-logic-rb": {
+        "passed": 11,
+        "total": 22
+      },
+      "json_logic": {
+        "passed": 15,
+        "total": 22
+      },
+      "shiny_json_logic": {
+        "passed": 14,
+        "total": 22
+      }
+    },
+    "arithmetic/minus.extra.json": {
+      "json-logic-rb": {
+        "passed": 0,
+        "total": 3
+      },
+      "json_logic": {
+        "passed": 0,
+        "total": 3
+      },
+      "shiny_json_logic": {
+        "passed": 0,
+        "total": 3
+      }
+    },
+    "arithmetic/divide.json": {
+      "json-logic-rb": {
+        "passed": 15,
+        "total": 31
+      },
+      "json_logic": {
+        "passed": 15,
+        "total": 31
+      },
+      "shiny_json_logic": {
+        "passed": 16,
+        "total": 31
+      }
+    },
+    "arithmetic/divide.extra.json": {
+      "json-logic-rb": {
+        "passed": 0,
+        "total": 3
+      },
+      "json_logic": {
+        "passed": 0,
+        "total": 3
+      },
+      "shiny_json_logic": {
+        "passed": 0,
+        "total": 3
+      }
+    },
+    "arithmetic/modulo.json": {
+      "json-logic-rb": {
+        "passed": 8,
+        "total": 31
+      },
+      "json_logic": {
+        "passed": 8,
+        "total": 31
+      },
+      "shiny_json_logic": {
+        "passed": 8,
+        "total": 31
+      }
+    },
+    "arithmetic/modulo.extra.json": {
+      "json-logic-rb": {
+        "passed": 0,
+        "total": 2
+      },
+      "json_logic": {
+        "passed": 0,
+        "total": 2
+      },
+      "shiny_json_logic": {
+        "passed": 0,
+        "total": 2
+      }
+    },
+    "comparison/greaterThan.json": {
+      "json-logic-rb": {
+        "passed": 27,
+        "total": 35
+      },
+      "json_logic": {
+        "passed": 16,
+        "total": 35
+      },
+      "shiny_json_logic": {
+        "passed": 16,
+        "total": 35
+      }
+    },
+    "comparison/greaterThanEquals.json": {
+      "json-logic-rb": {
+        "passed": 20,
+        "total": 28
+      },
+      "json_logic": {
+        "passed": 9,
+        "total": 28
+      },
+      "shiny_json_logic": {
+        "passed": 9,
+        "total": 28
+      }
+    },
+    "comparison/lessThan.json": {
+      "json-logic-rb": {
+        "passed": 37,
+        "total": 45
+      },
+      "json_logic": {
+        "passed": 26,
+        "total": 45
+      },
+      "shiny_json_logic": {
+        "passed": 26,
+        "total": 45
+      }
+    },
+    "comparison/lessThanEquals.json": {
+      "json-logic-rb": {
+        "passed": 15,
+        "total": 20
+      },
+      "json_logic": {
+        "passed": 10,
+        "total": 20
+      },
+      "shiny_json_logic": {
+        "passed": 10,
+        "total": 20
+      }
+    },
+    "comparison/softEquals.json": {
+      "json-logic-rb": {
+        "passed": 22,
+        "total": 35
+      },
+      "json_logic": {
+        "passed": 22,
+        "total": 35
+      },
+      "shiny_json_logic": {
+        "passed": 22,
+        "total": 35
+      }
+    },
+    "comparison/softNotEquals.json": {
+      "json-logic-rb": {
+        "passed": 21,
+        "total": 34
+      },
+      "json_logic": {
+        "passed": 21,
+        "total": 34
+      },
+      "shiny_json_logic": {
+        "passed": 21,
+        "total": 34
+      }
+    },
+    "comparison/strictEquals.json": {
+      "json-logic-rb": {
+        "passed": 26,
+        "total": 31
+      },
+      "json_logic": {
+        "passed": 26,
+        "total": 31
+      },
+      "shiny_json_logic": {
+        "passed": 27,
+        "total": 31
+      }
+    },
+    "comparison/strictNotEquals.json": {
+      "json-logic-rb": {
+        "passed": 26,
+        "total": 30
+      },
+      "json_logic": {
+        "passed": 26,
+        "total": 30
+      },
+      "shiny_json_logic": {
+        "passed": 26,
+        "total": 30
+      }
+    },
+    "control/and.json": {
+      "json-logic-rb": {
+        "passed": 22,
+        "total": 25
+      },
+      "json_logic": {
+        "passed": 18,
+        "total": 25
+      },
+      "shiny_json_logic": {
+        "passed": 19,
+        "total": 25
+      }
+    },
+    "control/if.json": {
+      "json-logic-rb": {
+        "passed": 40,
+        "total": 44
+      },
+      "json_logic": {
+        "passed": 32,
+        "total": 44
+      },
+      "shiny_json_logic": {
+        "passed": 36,
+        "total": 44
+      }
+    },
+    "control/or.json": {
+      "json-logic-rb": {
+        "passed": 22,
+        "total": 24
+      },
+      "json_logic": {
+        "passed": 18,
+        "total": 24
+      },
+      "shiny_json_logic": {
+        "passed": 19,
+        "total": 24
+      }
+    },
+    "control/not.json": {
+      "json-logic-rb": {
+        "passed": 22,
+        "total": 23
+      },
+      "json_logic": {
+        "passed": 22,
+        "total": 23
+      },
+      "shiny_json_logic": {
+        "passed": 22,
+        "total": 23
+      }
+    },
+    "control/doublebang.json": {
+      "json-logic-rb": {
+        "passed": 22,
+        "total": 23
+      },
+      "json_logic": {
+        "passed": 22,
+        "total": 23
+      },
+      "shiny_json_logic": {
+        "passed": 22,
+        "total": 23
+      }
+    },
+    "string/in.json": {
+      "json-logic-rb": {
+        "passed": 8,
+        "total": 8
+      },
+      "json_logic": {
+        "passed": 8,
+        "total": 8
+      },
+      "shiny_json_logic": {
+        "passed": 8,
+        "total": 8
+      }
+    },
+    "string/cat.json": {
+      "json-logic-rb": {
+        "passed": 9,
+        "total": 9
+      },
+      "json_logic": {
+        "passed": 9,
+        "total": 9
+      },
+      "shiny_json_logic": {
+        "passed": 9,
+        "total": 9
+      }
+    },
+    "string/substr.json": {
+      "json-logic-rb": {
+        "passed": 12,
+        "total": 12
+      },
+      "json_logic": {
+        "passed": 9,
+        "total": 12
+      },
+      "shiny_json_logic": {
+        "passed": 10,
+        "total": 12
+      }
+    },
+    "array/map.json": {
+      "json-logic-rb": {
+        "passed": 12,
+        "total": 14
+      },
+      "json_logic": {
+        "passed": 12,
+        "total": 14
+      },
+      "shiny_json_logic": {
+        "passed": 12,
+        "total": 14
+      }
+    },
+    "array/filter.json": {
+      "json-logic-rb": {
+        "passed": 9,
+        "total": 12
+      },
+      "json_logic": {
+        "passed": 9,
+        "total": 12
+      },
+      "shiny_json_logic": {
+        "passed": 10,
+        "total": 12
+      }
+    },
+    "array/reduce.json": {
+      "json-logic-rb": {
+        "passed": 9,
+        "total": 9
+      },
+      "json_logic": {
+        "passed": 9,
+        "total": 9
+      },
+      "shiny_json_logic": {
+        "passed": 9,
+        "total": 9
+      }
+    },
+    "array/merge.json": {
+      "json-logic-rb": {
+        "passed": 8,
+        "total": 8
+      },
+      "json_logic": {
+        "passed": 8,
+        "total": 8
+      },
+      "shiny_json_logic": {
+        "passed": 7,
+        "total": 8
+      }
+    },
+    "array/all.json": {
+      "json-logic-rb": {
+        "passed": 10,
+        "total": 12
+      },
+      "json_logic": {
+        "passed": 10,
+        "total": 12
+      },
+      "shiny_json_logic": {
+        "passed": 10,
+        "total": 12
+      }
+    },
+    "array/some.json": {
+      "json-logic-rb": {
+        "passed": 11,
+        "total": 13
+      },
+      "json_logic": {
+        "passed": 10,
+        "total": 13
+      },
+      "shiny_json_logic": {
+        "passed": 11,
+        "total": 13
+      }
+    },
+    "array/none.json": {
+      "json-logic-rb": {
+        "passed": 10,
+        "total": 13
+      },
+      "json_logic": {
+        "passed": 11,
+        "total": 13
+      },
+      "shiny_json_logic": {
+        "passed": 10,
+        "total": 13
+      }
+    },
+    "truthiness.json": {
+      "json-logic-rb": {
+        "passed": 8,
+        "total": 13
+      },
+      "json_logic": {
+        "passed": 8,
+        "total": 13
+      },
+      "shiny_json_logic": {
+        "passed": 8,
+        "total": 13
+      }
+    },
+    "additional.json": {
+      "json-logic-rb": {
+        "passed": 0,
+        "total": 4
+      },
+      "json_logic": {
+        "passed": 0,
+        "total": 4
+      },
+      "shiny_json_logic": {
+        "passed": 0,
+        "total": 4
+      }
+    },
+    "coalesce.json": {
+      "json-logic-rb": {
+        "passed": 0,
+        "total": 15
+      },
+      "json_logic": {
+        "passed": 0,
+        "total": 15
+      },
+      "shiny_json_logic": {
+        "passed": 0,
+        "total": 15
+      }
+    },
+    "chained.json": {
+      "json-logic-rb": {
+        "passed": 2,
+        "total": 7
+      },
+      "json_logic": {
+        "passed": 3,
+        "total": 7
+      },
+      "shiny_json_logic": {
+        "passed": 3,
+        "total": 7
+      }
+    },
+    "iterators.extra.json": {
+      "json-logic-rb": {
+        "passed": 1,
+        "total": 34
+      },
+      "json_logic": {
+        "passed": 1,
+        "total": 34
+      },
+      "shiny_json_logic": {
+        "passed": 0,
+        "total": 34
+      }
+    },
+    "exists.json": {
+      "json-logic-rb": {
+        "passed": 0,
+        "total": 8
+      },
+      "json_logic": {
+        "passed": 0,
+        "total": 8
+      },
+      "shiny_json_logic": {
+        "passed": 0,
+        "total": 8
+      }
+    },
+    "scopes.json": {
+      "json-logic-rb": {
+        "passed": 0,
+        "total": 4
+      },
+      "json_logic": {
+        "passed": 0,
+        "total": 4
+      },
+      "shiny_json_logic": {
+        "passed": 0,
+        "total": 4
+      }
+    },
+    "throw.json": {
+      "json-logic-rb": {
+        "passed": 0,
+        "total": 3
+      },
+      "json_logic": {
+        "passed": 0,
+        "total": 3
+      },
+      "shiny_json_logic": {
+        "passed": 0,
+        "total": 3
+      }
+    },
+    "try.json": {
+      "json-logic-rb": {
+        "passed": 0,
+        "total": 18
+      },
+      "json_logic": {
+        "passed": 0,
+        "total": 18
+      },
+      "shiny_json_logic": {
+        "passed": 0,
+        "total": 18
+      }
+    },
+    "try.extra.json": {
+      "json-logic-rb": {
+        "passed": 0,
+        "total": 1
+      },
+      "json_logic": {
+        "passed": 0,
+        "total": 1
+      },
+      "shiny_json_logic": {
+        "passed": 0,
+        "total": 1
+      }
+    },
+    "val.json": {
+      "json-logic-rb": {
+        "passed": 0,
+        "total": 13
+      },
+      "json_logic": {
+        "passed": 0,
+        "total": 13
+      },
+      "shiny_json_logic": {
+        "passed": 0,
+        "total": 13
+      }
+    },
+    "val.extra.json": {
+      "json-logic-rb": {
+        "passed": 0,
+        "total": 3
+      },
+      "json_logic": {
+        "passed": 0,
+        "total": 3
+      },
+      "shiny_json_logic": {
+        "passed": 0,
+        "total": 3
+      }
+    },
+    "val-compat.json": {
+      "json-logic-rb": {
+        "passed": 0,
+        "total": 60
+      },
+      "json_logic": {
+        "passed": 0,
+        "total": 60
+      },
+      "shiny_json_logic": {
+        "passed": 0,
+        "total": 60
+      }
+    }
+  },
+  "totals": {
+    "json-logic-rb": {
+      "passed": 781,
+      "total": 1126
+    },
+    "json_logic": {
+      "passed": 723,
+      "total": 1126
+    },
+    "shiny_json_logic": {
+      "passed": 733,
+      "total": 1126
+    }
+  }
+}

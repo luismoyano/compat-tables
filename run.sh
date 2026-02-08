@@ -21,5 +21,8 @@ sh run.sh
 cd ../dotnet-tests
 sh run.sh
 
+cd ../ruby-tests
+sh run.sh
+
 cd ../reports
 sh run.sh
