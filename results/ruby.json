@@ -20,7 +20,7 @@
     },
     "arithmetic/plus.json": {
       "shiny_json_logic": {
-        "passed": 24,
+        "passed": 32,
         "total": 32
       },
       "json_logic_ruby": {
@@ -56,7 +56,7 @@
     },
     "arithmetic/multiply.json": {
       "shiny_json_logic": {
-        "passed": 25,
+        "passed": 28,
         "total": 28
       },
       "json_logic_ruby": {
@@ -92,7 +92,7 @@
     },
     "arithmetic/minus.json": {
       "shiny_json_logic": {
-        "passed": 19,
+        "passed": 22,
         "total": 22
       },
       "json_logic_ruby": {
@@ -104,13 +104,13 @@
         "total": 22
       },
       "json_logic": {
-        "passed": 15,
+        "passed": 14,
         "total": 22
       }
     },
     "arithmetic/minus.extra.json": {
       "shiny_json_logic": {
-        "passed": 2,
+        "passed": 3,
         "total": 3
       },
       "json_logic_ruby": {
@@ -128,7 +128,7 @@
     },
     "arithmetic/divide.json": {
       "shiny_json_logic": {
-        "passed": 19,
+        "passed": 31,
         "total": 31
       },
       "json_logic_ruby": {
@@ -136,17 +136,17 @@
         "total": 31
       },
       "json-logic-rb": {
-        "passed": 15,
+        "passed": 5,
         "total": 31
       },
       "json_logic": {
-        "passed": 15,
+        "passed": 14,
         "total": 31
       }
     },
     "arithmetic/divide.extra.json": {
       "shiny_json_logic": {
-        "passed": 2,
+        "passed": 3,
         "total": 3
       },
       "json_logic_ruby": {
@@ -164,7 +164,7 @@
     },
     "arithmetic/modulo.json": {
       "shiny_json_logic": {
-        "passed": 14,
+        "passed": 31,
         "total": 31
       },
       "json_logic_ruby": {
@@ -176,13 +176,13 @@
         "total": 31
       },
       "json_logic": {
-        "passed": 8,
+        "passed": 7,
         "total": 31
       }
     },
     "arithmetic/modulo.extra.json": {
       "shiny_json_logic": {
-        "passed": 0,
+        "passed": 2,
         "total": 2
       },
       "json_logic_ruby": {
@@ -200,7 +200,7 @@
     },
     "comparison/greaterThan.json": {
       "shiny_json_logic": {
-        "passed": 26,
+        "passed": 35,
         "total": 35
       },
       "json_logic_ruby": {
@@ -208,7 +208,7 @@
         "total": 35
       },
       "json-logic-rb": {
-        "passed": 27,
+        "passed": 25,
         "total": 35
       },
       "json_logic": {
@@ -218,7 +218,7 @@
     },
     "comparison/greaterThanEquals.json": {
       "shiny_json_logic": {
-        "passed": 19,
+        "passed": 28,
         "total": 28
       },
       "json_logic_ruby": {
@@ -226,7 +226,7 @@
         "total": 28
       },
       "json-logic-rb": {
-        "passed": 20,
+        "passed": 18,
         "total": 28
       },
       "json_logic": {
@@ -236,7 +236,7 @@
     },
     "comparison/lessThan.json": {
       "shiny_json_logic": {
-        "passed": 36,
+        "passed": 45,
         "total": 45
       },
       "json_logic_ruby": {
@@ -244,7 +244,7 @@
         "total": 45
       },
       "json-logic-rb": {
-        "passed": 37,
+        "passed": 35,
         "total": 45
       },
       "json_logic": {
@@ -254,7 +254,7 @@
     },
     "comparison/lessThanEquals.json": {
       "shiny_json_logic": {
-        "passed": 14,
+        "passed": 20,
         "total": 20
       },
       "json_logic_ruby": {
@@ -262,7 +262,7 @@
         "total": 20
       },
       "json-logic-rb": {
-        "passed": 15,
+        "passed": 13,
         "total": 20
       },
       "json_logic": {
@@ -272,7 +272,7 @@
     },
     "comparison/softEquals.json": {
       "shiny_json_logic": {
-        "passed": 26,
+        "passed": 35,
         "total": 35
       },
       "json_logic_ruby": {
@@ -290,7 +290,7 @@
     },
     "comparison/softNotEquals.json": {
       "shiny_json_logic": {
-        "passed": 25,
+        "passed": 34,
         "total": 34
       },
       "json_logic_ruby": {
@@ -308,7 +308,7 @@
     },
     "comparison/strictEquals.json": {
       "shiny_json_logic": {
-        "passed": 28,
+        "passed": 31,
         "total": 31
       },
       "json_logic_ruby": {
@@ -326,7 +326,7 @@
     },
     "comparison/strictNotEquals.json": {
       "shiny_json_logic": {
-        "passed": 27,
+        "passed": 30,
         "total": 30
       },
       "json_logic_ruby": {
@@ -344,7 +344,7 @@
     },
     "control/and.json": {
       "shiny_json_logic": {
-        "passed": 24,
+        "passed": 25,
         "total": 25
       },
       "json_logic_ruby": {
@@ -362,7 +362,7 @@
     },
     "control/if.json": {
       "shiny_json_logic": {
-        "passed": 43,
+        "passed": 44,
         "total": 44
       },
       "json_logic_ruby": {
@@ -380,7 +380,7 @@
     },
     "control/or.json": {
       "shiny_json_logic": {
-        "passed": 23,
+        "passed": 24,
         "total": 24
       },
       "json_logic_ruby": {
@@ -488,7 +488,7 @@
     },
     "array/map.json": {
       "shiny_json_logic": {
-        "passed": 12,
+        "passed": 14,
         "total": 14
       },
       "json_logic_ruby": {
@@ -506,7 +506,7 @@
     },
     "array/filter.json": {
       "shiny_json_logic": {
-        "passed": 10,
+        "passed": 12,
         "total": 12
       },
       "json_logic_ruby": {
@@ -560,7 +560,7 @@
     },
     "array/all.json": {
       "shiny_json_logic": {
-        "passed": 10,
+        "passed": 11,
         "total": 12
       },
       "json_logic_ruby": {
@@ -578,7 +578,7 @@
     },
     "array/some.json": {
       "shiny_json_logic": {
-        "passed": 11,
+        "passed": 12,
         "total": 13
       },
       "json_logic_ruby": {
@@ -596,7 +596,7 @@
     },
     "array/none.json": {
       "shiny_json_logic": {
-        "passed": 11,
+        "passed": 12,
         "total": 13
       },
       "json_logic_ruby": {
@@ -686,7 +686,7 @@
     },
     "iterators.extra.json": {
       "shiny_json_logic": {
-        "passed": 0,
+        "passed": 34,
         "total": 34
       },
       "json_logic_ruby": {
@@ -694,11 +694,11 @@
         "total": 34
       },
       "json-logic-rb": {
-        "passed": 1,
+        "passed": 0,
         "total": 34
       },
       "json_logic": {
-        "passed": 1,
+        "passed": 0,
         "total": 34
       }
     },
@@ -740,7 +740,7 @@
     },
     "throw.json": {
       "shiny_json_logic": {
-        "passed": 0,
+        "passed": 3,
         "total": 3
       },
       "json_logic_ruby": {
@@ -758,7 +758,7 @@
     },
     "try.json": {
       "shiny_json_logic": {
-        "passed": 10,
+        "passed": 18,
         "total": 18
       },
       "json_logic_ruby": {
@@ -849,7 +849,7 @@
   },
   "totals": {
     "shiny_json_logic": {
-      "passed": 964,
+      "passed": 1123,
       "total": 1126
     },
     "json_logic_ruby": {
@@ -857,11 +857,11 @@
       "total": 1126
     },
     "json-logic-rb": {
-      "passed": 781,
+      "passed": 762,
       "total": 1126
     },
     "json_logic": {
-      "passed": 723,
+      "passed": 719,
       "total": 1126
     }
   }
