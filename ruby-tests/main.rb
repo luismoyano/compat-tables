@@ -32,16 +32,29 @@ def run_engine_tests(engine:, suite:)
     next unless case_data.is_a?(Hash)
 
     total += 1
+    expects_error = case_data.key?("error")
 
     puts "Running test #{total}: #{case_data["description"]}"
     result = engine.apply(case_data["rule"], case_data["data"])
-    if result == case_data["result"]
+    if expects_error
+      # Expected an error but got a result
+      puts "Test #{total} failed. Expected error, got #{result}"
+    elsif result == case_data["result"]
       passed += 1
     else
       puts "Test #{total} failed. Expected #{case_data["result"]}, got #{result}"
     end
   rescue StandardError => e
-    puts "Test #{total} failed. Expected #{case_data["result"]}, error #{e.message} was raised"
+    if expects_error
+      expected_type = case_data.dig("error", "type")
+      if e.respond_to?(:type) && e.type == expected_type
+        passed += 1
+      else
+        puts "Test #{total} failed. Expected error type #{expected_type}, got #{e.respond_to?(:type) ? e.type : e.class}"
+      end
+    else
+      puts "Test #{total} failed. Expected #{case_data["result"]}, error #{e.message} was raised"
+    end
     next
   end
 
