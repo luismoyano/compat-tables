@@ -362,7 +362,7 @@
     },
     "control/if.json": {
       "shiny_json_logic": {
-        "passed": 44,
+        "passed": 42,
         "total": 44
       },
       "json_logic_ruby": {
@@ -398,7 +398,7 @@
     },
     "control/not.json": {
       "shiny_json_logic": {
-        "passed": 23,
+        "passed": 22,
         "total": 23
       },
       "json_logic_ruby": {
@@ -416,7 +416,7 @@
     },
     "control/doublebang.json": {
       "shiny_json_logic": {
-        "passed": 23,
+        "passed": 22,
         "total": 23
       },
       "json_logic_ruby": {
@@ -614,7 +614,7 @@
     },
     "truthiness.json": {
       "shiny_json_logic": {
-        "passed": 13,
+        "passed": 11,
         "total": 13
       },
       "json_logic_ruby": {
@@ -849,7 +849,7 @@
   },
   "totals": {
     "shiny_json_logic": {
-      "passed": 1123,
+      "passed": 1117,
       "total": 1126
     },
     "json_logic_ruby": {
